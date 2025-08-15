@@ -434,68 +434,50 @@
 </style>
 <body class="bg-white rounded">
 
-    <!-- Navigation Bar -->
-    <nav class="fixed w-full top-0 left-0 z-50 transition-all duration-300 rounded">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 rounded">
-            <div id="nav-rectangle" class="mt-3 backdrop-blur-xl bg-white/80 w-full max-w-7xl mx-auto transition-colors duration-300">
-                <div class="flex justify-between items-center px-6 py-3">
-                    <!-- Logo -->
-                    <div class="flex items-center">
-                        <img src="./pictures/Logo (1).png" alt="EastSide Agro Logo" class="h-9 w-auto object-contain">
-                    </div>
-
-                    <!-- Desktop Navigation Links -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="#home" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Home</a>
-                        <a href="#about" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">About</a>
-                        <a href="#products" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Products</a>
-                        <a href="#contact" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Contact</a>
-                    </div>
-                    
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden text-gray-900 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
+ <!-- Navigation Bar -->
+<nav class="fixed w-full top-0 left-0 z-50 transition-all duration-300 rounded">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 rounded">
+        <div id="nav-rectangle" class="mt-3 backdrop-blur-xl bg-white/80  rounded  w-full max-w-7xl mx-auto transition-colors duration-300">
+            <div class="flex justify-between items-center px-6 py-3">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="./pictures/Logo (1).png" alt="EastSide Agro Logo" class="h-16 w-auto object-contain">
                 </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Home</a>
+                    <a href="#about" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">About</a>
+                    <a href="#products" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Products</a>
+                    <a href="#contact" class="text-gray-900 hover:text-amber-600 transition-colors text-sm font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-900 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
-
-<script>
-    window.addEventListener('scroll', () => {
-        const navRectangle = document.getElementById('nav-rectangle');
-        const navLinks = navRectangle.querySelectorAll('a');
-        const scrolled = window.scrollY > 40;
-
-        navRectangle.classList.toggle('bg-white/80', !scrolled);
-        navRectangle.classList.toggle('bg-custom-gradient', scrolled);
-        navRectangle.classList.toggle('shadow-md', scrolled);
-        navRectangle.classList.toggle('nav-gradient-transition', true);
-
-        navLinks.forEach(link => {
-            link.classList.toggle('text-gray-900', !scrolled);
-            link.classList.toggle('text-white', scrolled);
-        });
-    });
-</script>
-    
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black/90 z-40">
-        <div class="flex flex-col items-center justify-center h-full space-y-8">
-            <button id="close-mobile-menu-btn" class="absolute top-4 right-4 text-white text-2xl">
-                &times;
-            </button>
-            <a href="#home" class="mobile-link text-white text-2xl font-medium">Home</a>
-            <a href="#about" class="mobile-link text-white text-2xl font-medium">About</a>
-            <a href="#products" class="mobile-link text-white text-2xl font-medium">Products</a>
-            <a href="#contact" class="mobile-link text-white text-2xl font-medium">Contact</a>
-        </div>
     </div>
+</nav>
 
-    <!-- Hero Section -->
-<header id="home" class="relative h-screen flex items-center justify-center hero-background overflow-hidden m-1">
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-black/90 z-40">
+    <div class="flex flex-col items-center justify-center h-full space-y-8">
+        <button id="close-mobile-menu-btn" class="absolute top-4 right-4 text-white text-2xl">
+            &times;
+        </button>
+        <a href="#home" class="mobile-link text-white text-2xl font-medium">Home</a>
+        <a href="#about" class="mobile-link text-white text-2xl font-medium">About</a>
+        <a href="#products" class="mobile-link text-white text-2xl font-medium">Products</a>
+        <a href="#contact" class="mobile-link text-white text-2xl font-medium">Contact</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<header id="home" class="relative rounded h-screen flex items-center justify-center hero-background overflow-hidden m-1">
     <!-- Dark overlay with subtle gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/50"></div>
     
@@ -543,6 +525,47 @@
     </div>
 </header>
 
+<script>
+    // Mobile menu toggle functionality
+    const mobileMenuBtnn = document.getElementById('mobile-menu-btn');
+    const closeMobileMenuBtnn = document.getElementById('close-mobile-menu-btn');
+    const mobileMenuu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Toggle mobile menu
+    mobileMenuBtnn.addEventListener('click', () => {
+        mobileMenuu.classList.remove('hidden');
+    });
+
+    closeMobileMenuBtnn.addEventListener('click', () => {
+        mobileMenuu.classList.add('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenuu.classList.add('hidden');
+        });
+    });
+
+    // Original scroll behavior
+    window.addEventListener('scroll', () => {
+        const navRectangle = document.getElementById('nav-rectangle');
+        const navLinks = navRectangle.querySelectorAll('a');
+        const scrolled = window.scrollY > 40;
+
+        navRectangle.classList.toggle('bg-white/80', !scrolled);
+        navRectangle.classList.toggle('bg-custom-gradient', scrolled);
+        navRectangle.classList.toggle('shadow-md', scrolled);
+        navRectangle.classList.toggle('nav-gradient-transition', true);
+
+        navLinks.forEach(link => {
+            link.classList.toggle('text-gray-900', !scrolled);
+            link.classList.toggle('text-white', scrolled);
+        });
+    });
+</script>
+
     <!-- About Section -->
     <section class="bg-white md:pt-40 pt-16 pb-12 md:pb-20 px-4 sm:px-6 lg:px-28 m-1" id="about">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
@@ -555,7 +578,7 @@
             <!-- Left column: image -->
             <div class="relative lg:sticky lg:top-24 self-start order-2 lg:order-1">
                 <img
-                    class="w-full h-[40vh] sm:h-[50vh] lg:h-[65vh] object-cover shadow-lg lg:shadow-xl"
+                    class="w-full h-[40vh] rounded sm:h-[50vh] lg:h-[65vh] object-cover shadow-lg lg:shadow-xl"
                     src="./gallery/farm3.jpg"
                     alt="Ethiopian coffee farm landscape"
                     onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1800&auto=format&fit=crop'"
@@ -566,7 +589,7 @@
             <div class="relative order-1 lg:order-2">
                 <!-- Mobile: stacked cards with spacing -->
                 <div class="space-y-6 lg:hidden">
-                    <div class="bg-amber-600 text-white shadow-lg border border-white/10 p-6 sm:p-8">
+                    <div class="bg-amber-600 rounded text-white shadow-lg border border-white/10 p-6 sm:p-8">
                         <div class="flex items-center gap-3 text-white/90">
                             <h2 class="text-xl sm:text-2xl font-semibold">Our Mission</h2>
                         </div>
@@ -576,7 +599,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-amber-700 text-white shadow-lg border border-white/10 p-6 sm:p-8 ">
+                    <div class="bg-amber-700 rounded text-white shadow-lg border border-white/10 p-6 sm:p-8 ">
                         <div class="flex items-center gap-3 text-white/90">
                           
                             <h2 class="text-xl sm:text-2xl font-semibold">Our Vision</h2>
@@ -587,7 +610,7 @@
                         </p>
                     </div>
 
-                    <div class="bg-coffee-darker text-white shadow-lg border border-white/10 p-6 sm:p-8 ">
+                    <div class="bg-coffee-darker rounded text-white shadow-lg border border-white/10 p-6 sm:p-8 ">
                         <div class="flex items-center gap-3 text-white/90"></div>
                         <h2 class="text-xl sm:text-2xl font-semibold">Our Values</h2>
                         <div class="mt-3 h-0.5 w-8 sm:w-10 bg-white/40"></div>
@@ -604,7 +627,7 @@
                 <div class="hidden lg:block">
                     <div class="relative">
                         <!-- Mission Card -->
-                        <div class="sticky top-24 z-10 bg-coffee text-white shadow-2xl border border-white/10 p-8 md:p-10 mb-8 mt-0">
+                        <div class="sticky top-24 z-10 bg-amber-600  rounded text-white shadow-2xl border border-white/10 p-8 md:p-10 mb-8 mt-0">
                             <div class="flex items-center gap-3 text-white/90">
                                 <h2 class="text-2xl md:text-3xl font-semibold">Our Mission</h2>
                             </div>
@@ -615,7 +638,7 @@
                         </div>
                         
                         <!-- Vision Card -->
-                        <div class="sticky top-24 z-20 bg-coffee-dark text-white shadow-2xl border border-white/10 p-8 md:p-10 mb-8 mt-16 ">
+                        <div class="sticky top-24 z-20 bg-amber-700  rounded text-white shadow-2xl border border-white/10 p-8 md:p-10 mb-8 mt-16 ">
                             <div class="flex items-center gap-3 text-white/90">
                                 <h2 class="text-2xl md:text-3xl font-semibold">Our Vision</h2>
                             </div>
@@ -626,7 +649,7 @@
                         </div>
                         
                         <!-- Values Card -->
-                        <div class="sticky top-24 z-30 bg-coffee-darker text-white shadow-2xl border border-white/10 p-8 md:p-10 mt-32 ">
+                        <div class="sticky top-24 z-30 bg-coffee-darker rounded  text-white shadow-2xl border border-white/10 p-8 md:p-10 mt-32 ">
                             <div class="flex items-center gap-3 text-white/90">
                                 <h2 class="text-2xl md:text-3xl font-semibold">Our Values</h2>
                             </div>
@@ -755,35 +778,69 @@
     </div>
 </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="bg-gray-100 py-16 md:py-24 px-4 sm:px-6 lg:px-28 m-1 mb-1">
-        <div class="container mx-auto">
-            <div class="flex flex-col items-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                    Our Gallery
-                </h2>
-                <p class="text-gray-600 text-lg text-center max-w-2xl">
-                    Explore moments from our journey, from the lush coffee farms of Ethiopia to our dedicated team and global events.
-                </p>
-            </div>
+ <!-- Gallery Section -->
+<section id="gallery" class="bg-gray-100 py-16 md:py-24 px-4 sm:px-6 lg:px-28 m-1 mb-1">
+    <div class="container mx-auto">
+        <div class="flex flex-col items-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                Our Gallery
+            </h2>
+            <p class="text-gray-600 text-lg text-center max-w-2xl">
+                Explore moments from our journey, from the lush coffee farms of Ethiopia to our dedicated team and global events.
+            </p>
+        </div>
 
-            <nav class="flex justify-center mb-12">
-                <ul class="flex flex-wrap justify-center space-x-2 sm:space-x-4 p-2 bg-white  shadow-lg">
-                    <li><a href="#" class="nav-link px-6 py-2  text-sm font-medium transition-colors duration-300 bg-green-700 text-white hover:bg-green-800" data-category="All">All</a></li>
-                    <li><a href="#" class="nav-link px-6 py-2 text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Farm">Farm</a></li>
-                    <li><a href="#" class="nav-link px-6 py-2  text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Product">Product</a></li>
-                    <li><a href="#" class="nav-link px-6 py-2  text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Events">Events</a></li>
-                    <li><a href="#" class="nav-link px-6 py-2  text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Team">Team</a></li>
-                </ul>
-            </nav>
+        <nav class="flex justify-center mb-12">
+            <ul class="flex  justify-center space-x-2 sm:space-x-4 p-2 bg-white rounded-lg shadow-lg">
+                <!-- Navigation links for gallery categories -->
+                <li><a href="#" class="nav-link px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 bg-green-700 text-white hover:bg-green-800" data-category="Team">Team</a></li>
+                <li><a href="#" class="nav-link px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Farm">Farm</a></li>
+                <li><a href="#" class="nav-link px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Product">Product</a></li>
+                <li><a href="#" class="nav-link px-6 py-2 rounded-md text-sm font-medium transition-colors duration-300 text-gray-700 hover:bg-gray-200" data-category="Events">Events</a></li>
+            </ul>
+        </nav>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4" id="galleryGrid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4" id="galleryGrid">
+            <!-- Gallery images will be dynamically inserted here -->
+        </div>
+    </div>
+    <div id="contact"></div>
+</section>
+
+<!-- Image Modal -->
+<div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 transition-all duration-300 opacity-0 invisible">
+    <div class="relative w-full max-w-6xl px-4">
+        <!-- Close button -->
+        <button id="closeModalButton" class="absolute -top-12 right-0 text-white text-3xl z-50 hover:text-amber-400 transition-colors">
+            &times;
+        </button>
+        
+        <!-- Navigation buttons -->
+        <button id="prevButton" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        
+        <button id="nextButton" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+        
+        <!-- Image container -->
+        <div class="relative w-full h-full max-h-[80vh] flex flex-col">
+            <img id="modalImage" class="w-full h-full object-contain max-h-[70vh]" src="" alt="">
+            <div class="text-center items-center p-4 rounded-b-lg">
+                <h3 id="modalTitle" class="text-xl font-bold text-gray-100"></h3>
+                <p id="modalDescription" class="text-gray-300 mt-2"></p>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 
-    <!-- Contact CTA Section -->
-    <section id="contacts" class="bg-gray-600 my-12 text-white py-8 md:py-12 px-6 sm:px-10 lg:px-16 rounded-none relative overflow-hidden " style="background-image: url('./pictures/cfeebg3.webp'); background-size: cover; background-position: center;">
+     <!-- Contact CTA Section -->
+    <section  class="bg-gray-600 my-12 text-white py-8 md:py-12 px-6 sm:px-10 lg:px-16 rounded-none relative overflow-hidden " style="background-image: url('./pictures/cfeebg3.webp'); background-size: cover; background-position: center;">
         <div class="absolute inset-0 bg-black bg-opacity-60 pointer-events-none"></div>
         <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8 text-center lg:text-left relative z-10">
             <!-- Heading -->
@@ -793,7 +850,7 @@
 
             <!-- CTA Button -->
             <a href="tel:+251911752727"
-                 class="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 font-semibold shadow-md text-base md:text-lg transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 rounded-none">
+                 class="inline-flex rounded items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3 font-semibold shadow-md text-base md:text-lg transition-transform duration-200 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 ">
                 <svg xmlns="http://www.w3.org/2000/svg"
                     class="h-6 w-6"
                     viewBox="0 0 24 24"
@@ -828,14 +885,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-16 px-4 sm:px-6 lg:px-28 text-white m-1">
-        <div class="container mx-auto">
+    <footer class="bg-gray-900 rounded py-16 px-4 sm:px-6 lg:px-28 text-white m-1">
+        <div class="container round mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Company Info Column -->
                 <div class="flex flex-col items-center md:items-start text-center md:text-left">
                     <img src="./pictures/Logo (1).png" alt="EastSide Agro Industry Logo" class="h-16 mb-4 rounded-xl">
                     <p class="text-xl font-bold">EastSide Agro Industry</p>
-                    <p class="text-xs text-green-500 font-semibold mb-2">We Deal, We Deliver !!</p>
+                    <p class="text-xs text-green-500 font-semibold mb-2">From Bean to Global Reach.</p>
                     <p class="text-sm text-gray-400">Ethiopian Coffee Exporter</p>
                 </div>
 
@@ -915,20 +972,8 @@
         </div>
     </footer>
 
-    <script>
-        // JavaScript for mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const closeMobileMenuBtn = document.getElementById('close-mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-        });
-
-        closeMobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-        });
-
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
         // Data structure for gallery items
         const galleryData = {
             "Team": [
@@ -940,7 +985,6 @@
                 { src: "./gallery/team6.jpg", title: "Quality Control Team", description: "Ensuring the best standards." },
                 { src: "./gallery/team7.jpg", title: "Farmers and Partners", description: "Building sustainable relationships." }
             ],
-          
             "Farm": [
                 { src: "./gallery/farm1.jpg", title: "Freshly Picked Beans", description: "Harvesting the finest coffee beans." },
                 { src: "./gallery/farm2.jpg", title: "Sustainable Farming", description: "Our commitment to ethical agriculture." },
@@ -970,28 +1014,10 @@
                 { src: "./gallery/event5.jpg", title: "Coffee Conference", description: "Sharing knowledge and expertise." },
                 { src: "./gallery/event6.jpg", title: "Barista Competition", description: "Celebrating coffee craftsmanship." },
                 { src: "./gallery/event7.jpg", title: "Product Launch", description: "Introducing new coffee blends." }
-            ],
-              "All": [
-                { src: "./gallery/farm1.jpg", title: "Freshly Picked Beans", description: "Harvesting the finest coffee beans." },
-                { src: "./gallery/products7.jpg", title: "Quality Control Check", description: "Ensuring every bean meets our standards." },
-                { src: "./gallery/event5.jpg", title: "Coffee Conference", description: "Sharing knowledge and expertise." },
-                { src: "./gallery/team7.jpg", title: "Farmers and Partners", description: "Building sustainable relationships." },
-                { src: "./gallery/farm2.jpg", title: "Sustainable Farming", description: "Our commitment to ethical agriculture." },
-                { src: "./gallery/products3.jpg", title: "Expert Cupping Session", description: "Tasting notes and flavor profiles." },
-                { src: "./gallery/event2.jpg", title: "International Trade Fair", description: "Connecting with global partners." },
-                { src: "./gallery/team4.jpg", title: "Shipping Logistics", description: "Preparing coffee for worldwide export." },
-                { src: "./gallery/farm3.jpg", title: "Traditional Drying Methods", description: "Sun-drying for natural flavor." },
-                { src: "./gallery/prodct 6 (2).jpg", title: "Coffee Roasting Process", description: "The art of transforming green beans." },
-                { src: "./gallery/event4.jpg", title: "Coffee Ready for Export", description: "Our products reaching new markets." },
-                { src: "./gallery/team6.jpg", title: "Quality Control Team", description: "Ensuring the best standards." },
-                { src: "./gallery/farm5.jpg", title: "Harvesting in Progress", description: "A day on the coffee farm." },
-                { src: "./gallery/products5.jpg", title: "Roaster Machine in Action", description: "Precision roasting for perfect flavor." },
-                { src: "./gallery/event3.jpg", title: "Warehouse and Packaging", description: "Efficient storage and secure packing." },
-                { src: "./gallery/team1.jpg", title: "Team Collaboration", description: "Working together for excellence." }
-            ],
-            
+            ]
         };
 
+        // DOM element references
         const galleryGrid = document.getElementById('galleryGrid');
         const navLinks = document.querySelectorAll('.nav-link');
         const imageModal = document.getElementById('imageModal');
@@ -1002,30 +1028,31 @@
         const prevButton = document.getElementById('prevButton');
         const nextButton = document.getElementById('nextButton');
         
+        // State variables
         let currentImages = [];
         let currentIndex = 0;
 
         /**
-         * Renders gallery images based on the selected category with a fade-in effect.
+         * Renders gallery images based on the selected category.
          * @param {string} category - The category of images to display.
          */
         function renderGallery(category) {
-            galleryGrid.innerHTML = '';
+            galleryGrid.innerHTML = ''; // Clear previous images
             currentImages = galleryData[category];
             currentImages.forEach((item, index) => {
                 const imageContainer = document.createElement('div');
-                imageContainer.className = 'relative group cursor-pointer overflow-hidden  shadow-lg transform transition-transform duration-300 hover:scale-105';
+                imageContainer.className = 'relative group cursor-pointer overflow-hidden rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105';
                 
                 imageContainer.innerHTML = `
-                    <img src="${item.src}" alt="${item.title}" class="w-full h-64 object-cover transition-opacity duration-300">
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <img src="${item.src}" alt="${item.title}" class="w-full h-64 object-cover transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <h3 class="text-xl font-semibold text-white mb-1">${item.title}</h3>
                         <p class="text-sm text-gray-300">${item.description}</p>
                     </div>
                 `;
                 galleryGrid.appendChild(imageContainer);
 
-                // Add click listener to open modal with the specific image and its index
+                // Add click listener to open the modal with the specific image and its index
                 imageContainer.addEventListener('click', () => {
                     openModal(item.src, item.title, item.description, index);
                 });
@@ -1034,7 +1061,7 @@
 
         /**
          * Opens the image modal and displays the selected image and its details.
-         * @param {string} src - Image source.
+         * @param {string} src - Image source URL.
          * @param {string} title - Image title.
          * @param {string} description - Image description.
          * @param {number} index - Index of the image in the currentImages array.
@@ -1045,9 +1072,19 @@
             modalImage.alt = title;
             modalTitle.textContent = title;
             modalDescription.textContent = description;
+            imageModal.classList.remove('opacity-0', 'invisible');
             imageModal.classList.add('opacity-100', 'visible');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
             updateNavButtons();
+        }
+        
+        /**
+         * Closes the image modal.
+         */
+        function closeModal() {
+            imageModal.classList.remove('opacity-100', 'visible');
+            imageModal.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = ''; // Restore background scrolling
         }
 
         /**
@@ -1080,52 +1117,60 @@
             }
         }
 
-        // Add event listeners to navigation links
+        // Add event listeners to navigation links to switch categories
         navLinks.forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
                 const category = event.target.dataset.category;
 
+                // Update active state for nav links
                 navLinks.forEach(nav => {
                     nav.classList.remove('bg-green-700', 'text-white', 'hover:bg-green-800');
                     nav.classList.add('text-gray-700', 'hover:bg-gray-200');
                 });
-                event.target.classList.remove('text-gray-700', 'hover:bg-gray-200');
                 event.target.classList.add('bg-green-700', 'text-white', 'hover:bg-green-800');
+                event.target.classList.remove('text-gray-700', 'hover:bg-gray-200');
 
                 renderGallery(category);
             });
         });
 
-        // Close modal when close button is clicked
-        closeModalButton.addEventListener('click', () => {
-            imageModal.classList.remove('opacity-100', 'visible');
-            document.body.style.overflow = '';
-        });
-
-        // Close modal when clicking outside the image (on the overlay)
+        // Event listeners for closing the modal
+        closeModalButton.addEventListener('click', closeModal);
         imageModal.addEventListener('click', (event) => {
+            // Close modal only if clicking on the background overlay itself
             if (event.target === imageModal) {
-                imageModal.classList.remove('opacity-100', 'visible');
-                document.body.style.overflow = '';
+                closeModal();
             }
         });
 
-        // Add event listeners for the carousel navigation buttons
+        // Event listeners for the modal's navigation buttons
         prevButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent modal from closing
+            event.stopPropagation(); // Prevent modal from closing when clicking button
             showPrevImage();
         });
 
         nextButton.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent modal from closing
+            event.stopPropagation(); // Prevent modal from closing when clicking button
             showNextImage();
         });
 
-        // Initial render of the 'All' category when the page loads
-        document.addEventListener('DOMContentLoaded', () => {
-            renderGallery('All');
+        // Keyboard navigation for the modal
+        document.addEventListener('keydown', (event) => {
+            if (imageModal.classList.contains('visible')) {
+                if (event.key === 'ArrowLeft') {
+                    showPrevImage();
+                } else if (event.key === 'ArrowRight') {
+                    showNextImage();
+                } else if (event.key === 'Escape') {
+                    closeModal();
+                }
+            }
         });
-    </script>
+
+        // Initial render of the 'Team' category when the page loads
+        renderGallery('Team');
+    });
+</script>
 </body>
 </html>
